@@ -1,0 +1,89 @@
+﻿@model donorclub.Models.ProvideHelpModel
+
+@{
+    ViewBag.Title = "ProvideHelp";
+    Layout = "~/Views/Shared/User_Layout.cshtml";
+}
+
+<!--#INCLUDE file="head.asp"-->
+<!--start page wrapper -->
+<div class="page-wrapper">
+    <div class="page-content">
+        <!--breadcrumb-->
+        <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-5">
+            <div class="ps-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0 p-0">
+                        <li class="breadcrumb-item">
+                            <a href="javascript:;"><i class="bx bx-home-alt"></i> Dashboard</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Provide Help</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!--end breadcrumb-->
+
+        <div class="row">
+            <div class="col-xl-6 mx-auto">
+                <div class="card tran-bg">
+                    <div class="card-header px-4 py-3 border-bottom">
+                        <h5 class="mb-0">Provide Help</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        @if (TempData["InvestmentAlert"] != null)
+                        {
+                            <div class="block-title">
+                                <h2><p class="alert alert-success">@TempData["InvestmentAlert"]</p></h2>
+                            </div>
+
+                        }
+                        @using (Html.BeginForm("ProvideHelp", "Dashboard", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+                        {
+                            @Html.ValidationSummary(true)
+
+                            @*<div class="col-md-12">
+                                <label for="bsValidation9" class="form-label">Amount</label>
+                                @Html.DropDownListFor(m => m.amount, Model.Packages, "Select Amount", new { @class = "form-control", @style = "color:white;" })
+                                @Html.ValidationMessageFor(model => model.amount)
+
+                            </div>*@
+
+                            <div class="col-md-12">
+                                <label for="bsValidation9" class="form-label">Enter Pin</label>
+                                @Html.TextBoxFor(m => m.pin, new { @class = "form-control", placeholder = "pin", @style = "color:white;font-size: 15px;" })
+                                @Html.ValidationMessageFor(m => m.pin, "", new { @style = "color:red;" })
+
+                            </div>
+
+
+
+
+                            <div class="col-md-12">
+                                <div class="d-md-flex d-grid align-items-center gap-3">
+                                    <!-- <button type="submit" class="btn btn-white px-4">Submit</button> -->
+
+                                </div>
+
+                            </div>
+                            <button type="submit" class="btn btn-light px-4">Make Provide Help</button>
+
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end row-->
+
+
+
+
+    </div>
+</div>
+<!--end page wrapper -->
+<!--start overlay-->
+<div class="overlay toggle-icon"></div>
+<!--end overlay-->
+<!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+<!--End Back To Top Button-->
+<!--#INCLUDE file="foot.asp"-->

@@ -1,0 +1,631 @@
+﻿<!doctype html>
+<html lang="en">
+
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--favicon-->
+    <link rel="icon" href="~/Content/Dash/assets/images/logo.png" type="png">
+   
+    <!--plugins-->
+    <link href="~/Content/Dash/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+    <link href="~/Content/Dash/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+    <link href="~/Content/Dash/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+    <link href="~/Content/Dash/assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+    <!-- loader-->
+    <link href="~/Content/Dash/assets/css/pace.min.css" rel="stylesheet" />
+    <script src="~/Content/Dash/assets/js/pace.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="~/Content/Dash/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/Dash/assets/css/bootstrap-extended.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet">
+    <link href="~/Content/Dash/assets/css/app.css" rel="stylesheet">
+    <link href="~/Content/Dash/assets/css/icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap4.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+    <title>Donoresclub</title>
+    <style>
+		.user-card {
+      background: #2c2c3e;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+    }
+.panel-heading {
+      height: 100px;
+      background-size: cover;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 15px;
+    }
+
+    .bottom {
+      background:linear-gradient(45deg, #161522, #1d1d38);
+      color: white;
+      padding: 10px;
+    }
+
+    .user-card {
+      margin-bottom: 2rem;
+    }
+
+    .social-detail {
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+      list-style: none;
+    }
+
+    .social-detail li {
+      flex: 1;
+      text-align: center;
+    }
+    .panel-heading {
+      padding: 15px;
+      background-size: cover;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+
+    .panel-title,
+    h2,
+    h3,
+    h4,
+    span,
+    p {
+      color: #fff;
+    }
+
+    .bottom {
+      padding: 15px;
+    }
+
+    .widget-caption {
+      margin-bottom: 15px;
+    }
+
+    .widget-caption .icon {
+      font-size: 24px;
+      padding-top: 10px;
+      color: #077ccd;
+    }
+
+    .widget-detail h4 {
+      margin: 0;
+    }
+
+    .widget-line {
+      height: 6px;
+      background: #3a3a4d;
+      border-radius: 5px;
+      margin-top: 5px;
+    }
+
+    .widget-horigental-line {
+      display: block;
+      height: 6px;
+      background-color: #17a2b8;
+      border-radius: 5px;
+    }
+
+    .btn-modal button {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .social-detail {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      margin: 0;
+      list-style: none;
+    }
+
+    .modal-header {
+      border-bottom: none;
+    }
+
+    .modal-body {
+      background-color: #2c2c3e;
+    }
+
+    .modal-title {
+      font-weight: bold;
+    }
+
+   s
+
+      .btn-modal button {
+        width: 100%;
+      }
+    }
+
+/* Updated Styles */
+/* .panel {
+  background-color: #1e293d;
+  border-radius: 6px;
+  border: 1px solid #293750;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.panel-heading {
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  padding: 10px 15px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.panel-body {
+  padding: 15px;
+  color: #fff;
+}
+.panel-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+.user-card .bottom {
+  padding: 10px 15px;
+  background: #1e293d;
+}
+.widget {
+  border: 1px solid #293750;
+  background: #1e293d;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  border-radius: 6px;
+}
+.widget-caption {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.widget-caption i.icon {
+  font-size: 20px;
+  line-height: 48px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #2a3852;
+  color: #fff;
+  text-align: center;
+  border: 3px solid #394a69;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+.widget-detail {
+  flex-grow: 1;
+  text-align: right;
+}
+.widget-detail h4 {
+  margin: 0;
+  font-size: 14px;
+}
+.cl-info { color: #01b2ac; }
+.cl-success { color: #66bb6a; }
+.cl-warning { color: #ffa726; }
+.widget-line {
+  height: 4px;
+  background-color: #1e293d;
+  margin-top: 5px;
+}
+.widget-horigental-line {
+  display: block;
+  height: 100%;
+  background-color: #01b2ac;
+}
+.btn {
+  margin: 3px;
+  font-weight: 600;
+  border-radius: 3px;
+  color: #fff !important;
+}
+.modal-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+@*@media (max-width: 768px) {
+  .panel-heading {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+  }
+  .panel-body > .col-md-4,
+  .panel-body > .col-md-8 {
+    width: 100%;
+    text-align: center;
+  }*@
+} */
+
+
+
+
+    </style>
+</head>
+
+<body class="bg-theme bg-theme1">
+    <!--wrapper-->
+    <div class="wrapper">
+        <!--sidebar wrapper -->
+        <div class="sidebar-wrapper" data-simplebar="true">
+            <div class="sidebar-header">
+                <div>
+                    <img src="~/Content/Dash/assets/images/logo.png" class="mt-3 mb-3 mx-auto" alt="logo icon" style="width: 30%;display: flex;">
+                </div>
+                <!-- <div>
+                    <h4 class="logo-text">Logo</h4>
+                </div> -->
+                <div class="toggle-icon ms-auto">
+                    <i class='bx bx-arrow-back'></i>
+                </div>
+            </div>
+            <!--navigation-->
+            <ul class="metismenu" id="menu">
+                <li>
+                    <a href="/Dashboard/Index">
+                        <div class="parent-icon">
+                            <i class='bx bx-home-alt'></i>
+                        </div>
+                        <div class="menu-title">Dashboard</div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="javascript:;" class="has-arrow">
+                        <div class="parent-icon">
+                            <i class="bx bx-user-circle"></i>
+
+                        </div>
+                        <div class="menu-title">Profile</div>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="/Dashboard/MyProfile"><i class='bx bx-radio-circle'></i>User Profile</a>
+                        </li>
+                        <li>
+                            <a href="/Dashboard/editProfile"><i class='bx bx-radio-circle'></i>Edit Profile</a>
+                        </li>
+                        <li><a href="/Dashboard/changepwd"><i class='bx bx-radio-circle'></i>Change Password</a></li>
+                        <li><a href="/Dashboard/addBankDetails"><i class='bx bx-radio-circle'></i>Bank Details</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript:;" class="has-arrow">
+                        <div class="parent-icon">
+                            <i class='bx bx-group'></i>
+                        </div>
+                        <div class="menu-title">My Network</div>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="/Dashboard/Direct_team"><i class='bx bx-radio-circle'></i>Direct Team</a>
+                        </li>
+                        <li>
+                            <a href="/Dashboard/Downline_Team"><i class='bx bx-radio-circle'></i>Downline Team</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a class="has-arrow" href="javascript:;">
+                        <div class="parent-icon">
+                            <i class="bx bx-donate-blood"></i>
+                        </div>
+                        <div class="menu-title">Pin</div>
+                    </a>
+                    <ul>
+                        <li> <a href="/Dashboard/Pin_request"><i class='bx bx-radio-circle'></i>Pin Request</a></li>
+                        <li> <a href="/Dashboard/Pin_request_history"><i class='bx bx-radio-circle'></i>Pin Request History</a></li>
+                        <li> <a href="/Dashboard/Pin_history"><i class='bx bx-radio-circle'></i>Pin  History</a></li>
+                        <li> <a href="/Dashboard/Pin_transfer"><i class='bx bx-radio-circle'></i>Pin  Transfer</a></li>
+                        <li> <a href="/Dashboard/Pin_transferHistory"><i class='bx bx-radio-circle'></i>Pin Transfer  History</a></li>
+                        <li> <a href="/Dashboard/Pin_receivedHistory"><i class='bx bx-radio-circle'></i>Pin Receive  History</a></li>
+                    </ul>
+                </li>
+
+
+
+                <li>
+                    <a class="has-arrow" href="javascript:;">
+                        <div class="parent-icon">
+                            <i class='bx bx-donate-blood'></i>
+                        </div>
+                        <div class="menu-title">Provide Help</div>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="/Dashboard/ProvideHelp"><i class='bx bx-radio-circle'></i>Provide Help</a>
+                        </li>
+                        <li>
+                            <a href="/Dashboard/ProvideHistory"><i class='bx bx-radio-circle'></i>Provide Help History</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a class="has-arrow" href="javascript:;">
+                        <div class="parent-icon">
+                            <i class='bx bx-bookmark-heart'></i>
+                        </div>
+                        <div class="menu-title">Get Help</div>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="/Dashboard/GetHelp"><i class='bx bx-radio-circle'></i>Get Help</a>
+                        </li>
+                        <li>
+                            <a href="/Dashboard/GetHelpHistory"><i class='bx bx-radio-circle'></i>Get Help History</a>
+                        </li>
+                    </ul>
+                </li>
+                
+
+                <li>
+                    <a class="has-arrow" href="javascript:;">
+                        <div class="parent-icon">
+                            <i class='bx bx-message-square-edit'></i>
+                        </div>
+                        <div class="menu-title">Income</div>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="/Dashboard/direct_income"><i class='bx bx-radio-circle'></i>Direct Income</a>
+                        </li>
+                        <li>
+                            <a href="/Dashboard/level_income"><i class='bx bx-radio-circle'></i>Level Income</a>
+                        </li>
+                        </ul>
+                        <!-- <li> <a href="roi_income.html"><i class='bx bx-radio-circle'></i>ROI Income</a> -->
+                </li>
+
+
+
+
+                @*<li>
+                    <a class="has-arrow" href="javascript:;">
+                        <div class="parent-icon">
+                            <i class='bx bx-message-square-edit'></i>
+                        </div>
+                        <div class="menu-title">Withdrawal</div>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="/Dashboard/WithdrawalRewardBonus"><i class='bx bx-radio-circle'></i>Withdrawal</a>
+                        </li>
+                        <li>
+                            <a href="/Dashboard/WithdrawalHistory"><i class='bx bx-radio-circle'></i>Withdrawal History</a>
+                        </li>
+                         <li> <a href="roi_income.html"><i class='bx bx-radio-circle'></i>ROI Income</a> 
+                </li>
+
+
+
+            </ul>
+            </li>*@
+
+            <li>
+                <a class="has-arrow" href="javascript:;">
+                    <div class="parent-icon">
+                        <i class="bx bx-cog"></i>
+                    </div>
+                    <div class="menu-title">Support</div>
+                </a>
+                <ul>
+                    <li>
+                        <a href="compose.asp"><i class='bx bx-radio-circle'></i>Compose</a>
+                    </li>
+                    <li>
+                        <a href="inbox1.asp"><i class='bx bx-radio-circle'></i>Inbox</a>
+                    </li>
+                    <li>
+                        <a href="outbox.asp"><i class='bx bx-radio-circle'></i>Outbox</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" target="_blank">
+                    <div class="parent-icon">
+                        <i class="bx bx-log-out-circle"></i>
+                    </div>
+                    <div class="menu-title">Logout</div>
+                </a>
+            </li>
+            </ul>
+            <!--end navigation-->
+        </div>
+        <!--end sidebar wrapper -->
+        <!--start header -->
+        <header>
+            <div class="topbar d-flex align-items-center">
+                <nav class="navbar navbar-expand gap-3">
+                    <div class="mobile-toggle-menu">
+                        <i class='bx bx-menu'></i>
+                    </div>
+
+                    <div class="top-menu ms-auto">
+                        <ul class="navbar-nav align-items-center gap-1">
+                            <li class="nav-item dropdown dropdown-app">
+                                <div class="dropdown-menu dropdown-menu-end p-0">
+                                    <div class="app-container p-2 my-2">
+                                        <div class="row gx-0 gy-2 row-cols-3 justify-content-center p-2">
+
+
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown dropdown-large">
+
+                                <div class="dropdown-menu dropdown-menu-end">
+
+                                    <div class="header-notifications-list">
+
+                                    </div>
+
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown dropdown-large">
+
+                                <div class="dropdown-menu dropdown-menu-end">
+
+                                    <div class="header-message-list">
+                                    </div>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="user-box dropdown px-3">
+                        <a class="d-flex align-items-center nav-link dropdown-toggle gap-3 dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="~/Content/Dash/assets/images/avatars/avatar-2.png" class="user-img" alt="user avatar">
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center" href="profile.asp"><i class="bx bx-user fs-5"></i><span>User Profile</span></a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center" href="editProfile.asp"><i class="bx bx-user fs-5"></i><span>Edit Profile</span></a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i class="bx bx-cog fs-5"></i><span> Privacy Settings</span></a>
+                            </li>
+
+                            <li>
+                                <div class="dropdown-divider mb-0"></div>
+                            </li>
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i class="bx bx-log-out-circle"></i><span>Logout</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!--end header -->
+
+
+        @RenderBody()
+
+
+        <footer class="page-footer">
+            <p class="my-3">Copyright © 2025. All right reserved.</p>
+        </footer>
+    </div>
+    </div>
+
+    </div>
+    <!--end page wrapper -->
+    <!--start overlay-->
+    </div>
+    <!--end wrapper-->
+    <!-- Bootstrap JS -->
+    <script src="~/Content/Dash/assets/js/bootstrap.bundle.min.js"></script>
+    <!--plugins-->
+    <script src="~/Content/Dash/assets/js/jquery.min.js"></script>
+    <script src="~/Content/Dash/assets/plugins/simplebar/js/simplebar.min.js"></script>
+    <script src="~/Content/Dash/assets/plugins/metismenu/js/metisMenu.min.js"></script>
+    <script src="~/Content/Dash/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+    <script src="~/Content/Dash/assets/plugins/chartjs/chart.min.js"></script>
+    <script src="~/Content/Dash/assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="~/Content/Dash/assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="~/Content/Dash/assets/plugins/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+    <script src="~/Content/Dash/assets/plugins/sparkline-charts/jquery.sparkline.min.js"></script>
+    <script src="~/Content/Dash/assets/plugins/jquery-knob/excanvas.js"></script>
+    <script src="~/Content/Dash/assets/plugins/jquery-knob/jquery.knob.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+        $(function () {
+            $(".knob").knob();
+        });
+    </script>
+    <script src="~/Content/Dash/assets/js/index.js"></script>
+    <!--app JS-->
+    <script src="~/Content/Dash/assets/js/app.js"></script>
+    <script>
+        let copyText = document.querySelector(".copy-text");
+        copyText.querySelector("button").addEventListener("click", function () {
+            let input = copyText.querySelector("input.text");
+            input.select();
+            document.execCommand("copy");
+            copyText.classList.add("active");
+            window.getSelection().removeAllRanges();
+            setTimeout(function () {
+                copyText.classList.remove("active");
+            }, 2500);
+        });
+
+    </script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submis
+            // sion
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
+    <!-- ✅ Bootstrap 5.3 JS (required for modals) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Optional: Dummy JS functions -->
+    <script>
+        function saveaccept() {
+            alert("Accepted successfully.");
+        }
+
+        function savereject() {
+            alert("Rejected.");
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+
+
+</body>
+
+
+</html>
